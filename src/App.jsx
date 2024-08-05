@@ -14,7 +14,7 @@ export default function App() {
     } else {
       const filtered = mappedData.filter((job) => {
         const jobTags = [job.role, job.level, ...job.languages, ...job.tools];
-        return filter.every((f) => jobTags.includes(f.text));
+        return filter.some((f) => jobTags.includes(f.text));
       });
       setFilteredList(filtered);
     }
