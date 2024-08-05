@@ -14,7 +14,7 @@
 }
 
 body{
-   
+    min-height: 100vh;
     background-size: 100%;
     background-color: hsl(180, 52%, 96%);
 }
