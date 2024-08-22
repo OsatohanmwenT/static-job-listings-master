@@ -4,19 +4,17 @@ import useMappedData from "./hooks/mappedData";
 
 export default function App() {
   const [filter, setFilter] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
 
   const mappedData = useMappedData();
 
-  useEffect(() => {
+  const filteredList = useMemo(() => {
     if (filter.length === 0) {
-      setFilteredList(mappedData);
+      return mappedData;
     } else {
-      const filtered = mappedData.filter((job) => {
+      return mappedData.filter((job) => {
         const jobTags = [job.role, job.level, ...job.languages, ...job.tools];
         return filter.some((f) => jobTags.includes(f.text));
       });
-      setFilteredList(filtered);
     }
   }, [filter, mappedData]);
 
