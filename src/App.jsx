@@ -7,7 +7,7 @@ export default function App() {
 
   const mappedData = useMappedData();
 
-  const filteredList = useMemo(() => {
+  const filteredList = useCallback(() => {
     if (filter.length === 0) {
       return mappedData;
     } else {
@@ -18,7 +18,7 @@ export default function App() {
     }
   }, [filter, mappedData]);
 
-  const filterSelect = useCallback((text) => {
+  const filterSelect = useMemo((text) => {
     setFilter((prevFilter) => {
       const inList = prevFilter.find((item) => item.text === text);
       if (inList) {
