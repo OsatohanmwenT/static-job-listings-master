@@ -18,7 +18,7 @@ export default function App() {
     }
   }, [filter, mappedData]);
 
-  const filterSelect = useMemo((text) => {
+  const filterSelect = useCallback((text) => {
     setFilter((prevFilter) => {
       const inList = prevFilter.find((item) => item.text === text);
       if (inList) {
