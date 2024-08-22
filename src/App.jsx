@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import JobList from "./components/JobList";
 import useMappedData from "./hooks/mappedData";
 
