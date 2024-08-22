@@ -7,7 +7,7 @@ export default function App() {
 
   const mappedData = useMappedData();
 
-  const filteredList = useCallback(() => {
+  const filteredList = useMemo(() => {
     if (filter.length === 0) {
       return mappedData;
     } else {
